@@ -1,0 +1,14 @@
+{
+    "name": "com.theknightssanctuary.core",
+    "displayName": "TheKnightsSanctuary.Core",
+    "version": "1.0.0",
+    "unity": "2020.3",
+    "author": "Jacob 'Ruceus' Wolyniec",
+    "description": "Includes Useful Unity Scripts for general purposes, XR projects, and games.",
+    "dependencies": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Ruceus/RuceusCorePackage.git"
+    }
+}
