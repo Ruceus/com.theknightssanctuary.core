@@ -1,6 +1,6 @@
 {
     "name": "TheKnightsSanctuary.Core",
-    "rootNamespace": "",
+    "rootNamespace": "TheKnightsSanctuary.Core",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
