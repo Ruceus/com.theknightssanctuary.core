@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TheKnightsSanctuary.Core
 {
-    public class GenericReferenceValueSO<T> : GenericEventChannelSO<T>
+    public abstract class GenericReferenceValueSO<T> : GenericEventChannelSO<T>
     {
         [SerializeField] protected T value;
         [SerializeField] private bool privateSet = false;
@@ -20,9 +18,22 @@ namespace TheKnightsSanctuary.Core
                     return;
                 }
                 this.value = value;
+                RaiseEvent(value);
             }
         }
 
         public static implicit operator T(GenericReferenceValueSO<T> referenceValue) => referenceValue.value;
+
+        public static GenericReferenceValueSO<T> operator +(GenericReferenceValueSO<T> channel, UnityAction<T> listener)
+        {
+            channel.onEventRaised += listener;
+            return channel;
+        }
+
+        public static GenericReferenceValueSO<T> operator -(GenericReferenceValueSO<T> channel, UnityAction<T> listener)
+        {
+            channel.onEventRaised -= listener;
+            return channel;
+        }
     }
 }
